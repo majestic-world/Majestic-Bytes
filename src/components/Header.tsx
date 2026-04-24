@@ -10,14 +10,14 @@ const Header: React.FC = () => {
           letterSpacing: '0.1em', 
           fontSize: '14px',
           fontFamily: 'var(--font-heading)'
-        }}>CE_ASSIST_V2.0</span>
+        }}>Majestic Bytes v0.1</span>
         <span style={{ width: '1px', height: '16px', backgroundColor: 'var(--outline-color)' }}></span>
         <span style={{ 
           color: 'var(--text-primary)', 
           fontSize: '12px', 
           fontWeight: 700,
           fontFamily: 'var(--font-heading)' 
-        }}>ROOT // SESSION: 0x89A8</span>
+        }}>By Mk</span>
       </div>
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>

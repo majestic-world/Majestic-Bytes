@@ -15,14 +15,14 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => {
           letterSpacing: '0.1em', 
           fontSize: '14px',
           fontFamily: 'var(--font-heading)'
-        }}>CORE_SYSTEM</h1>
+        }}>Majestic Bytes</h1>
         <p style={{ 
           fontFamily: 'var(--font-heading)', 
           fontSize: '11px', 
           fontWeight: 700,
           color: 'var(--text-secondary)',
           marginTop: '4px'
-        }}>MONITOR_ACTIVE</p>
+        }}>Cheat Engine Assistant</p>
       </div>
       
       <nav style={{ flex: 1 }}>
@@ -40,32 +40,17 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => {
           onClick={(e) => { e.preventDefault(); onNavigate('aob'); }}
         >
           <span className="material-symbols-outlined">data_object</span>
-          AOB_SIGNATURE
+          AOB SIGNATURE
         </a>
-        <a href="#" className="nav-item">
-          <span className="material-symbols-outlined">account_tree</span>
-          POINTER_SCAN
-        </a>
-        <a href="#" className="nav-item">
-          <span className="material-symbols-outlined">code</span>
-          HEX_EDITOR
-        </a>
-        <a href="#" className="nav-item">
-          <span className="material-symbols-outlined">bug_report</span>
-          DEBUGGER
+        <a 
+          href="#" 
+          className={`nav-item ${currentPage === 'lua' ? 'active' : ''}`}
+          onClick={(e) => { e.preventDefault(); onNavigate('lua'); }}
+        >
+          <span className="material-symbols-outlined">script</span>
+          LUA AOB SCRIPT
         </a>
       </nav>
-
-      <div style={{ padding: '16px 0', borderTop: '1px solid var(--outline-color)' }}>
-        <a href="#" className="nav-item">
-          <span className="material-symbols-outlined">list_alt</span>
-          LOGS
-        </a>
-        <a href="#" className="nav-item">
-          <span className="material-symbols-outlined">help_outline</span>
-          HELP
-        </a>
-      </div>
     </aside>
   );
 };
