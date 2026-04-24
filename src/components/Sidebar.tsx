@@ -32,7 +32,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => {
           onClick={(e) => { e.preventDefault(); onNavigate('converter'); }}
         >
           <span className="material-symbols-outlined">analytics</span>
-          CONVERTER
+          HEX CONVERTER
         </a>
         <a 
           href="#" 
