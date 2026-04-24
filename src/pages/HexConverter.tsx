@@ -43,12 +43,12 @@ const HexConverter: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
       <div className="card">
-        <div style={{ display: 'flex', justifyContent: 'between', alignItems: 'center', borderBottom: '1px solid var(--outline-color)', paddingBottom: '8px', marginBottom: '16px' }}>
-          <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--outline-color)', paddingBottom: '8px', marginBottom: '16px' }}>
+          <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', display: 'flex', alignItems: 'center', gap: '8px', margin: 0 }}>
             <span className="material-symbols-outlined">analytics</span>
-            DATA_CONVERTER
+            DATA CONVERTER
           </h2>
           <button 
             onClick={toggleMode}
@@ -82,11 +82,11 @@ const HexConverter: React.FC = () => {
 
         <button className="btn-primary" style={{ margin: '16px 0' }} onClick={handleConvert}>
           <span className="material-symbols-outlined">play_arrow</span>
-          GENERATE_OUTPUT
+          GENERATE OUTPUT
         </button>
 
         <div className="input-group">
-          <label className="label-caps">RESULT_OUTPUT</label>
+          <label className="label-caps">RESULT OUTPUT</label>
           <div style={{ display: 'flex', gap: '8px' }}>
             <input 
               type="text" 
@@ -108,7 +108,7 @@ const HexConverter: React.FC = () => {
       </div>
 
       <div className="card" style={{ padding: '12px' }}>
-        <h3 className="label-caps" style={{ marginBottom: '8px' }}>SYSTEM_LOG</h3>
+        <h3 className="label-caps" style={{ marginBottom: '8px' }}>SYSTEM LOG</h3>
         <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-secondary)' }}>
           <div>[INFO] Converters initialized.</div>
           <div>[READY] Awaiting user interaction...</div>

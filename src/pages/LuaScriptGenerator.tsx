@@ -44,12 +44,12 @@ unregisterSymbol("${pointerName}")
   };
 
   return (
-    <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+    <div style={{ maxWidth: '900px', margin: '0 auto' }}>
       <div className="card">
         <div style={{ borderBottom: '1px solid var(--outline-color)', paddingBottom: '8px', marginBottom: '16px' }}>
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span className="material-symbols-outlined">script</span>
-            LUA_SCRIPT_GENERATOR
+            LUA SCRIPT GENERATOR
           </h2>
         </div>
 
@@ -77,11 +77,11 @@ unregisterSymbol("${pointerName}")
 
         <button className="btn-primary" style={{ margin: '16px 0' }} onClick={generateScript}>
           <span className="material-symbols-outlined">terminal</span>
-          GENERATE_LUA_SCRIPT
+          GENERATE LUA SCRIPT
         </button>
 
         <div className="input-group">
-          <label className="label-caps">LUA_TEMPLATE_OUTPUT</label>
+          <label className="label-caps">LUA TEMPLATE OUTPUT</label>
           <textarea 
             className="input-field" 
             style={{ height: '300px', resize: 'none', backgroundColor: '#0e0e0e', opacity: 0.9, fontSize: '12px' }}
@@ -98,7 +98,7 @@ unregisterSymbol("${pointerName}")
           style={{ color: copied ? '#4ade80' : 'var(--text-primary)' }}
         >
           <span className="material-symbols-outlined">{copied ? 'check' : 'content_copy'}</span>
-          {copied ? 'SCRIPT_COPIED' : 'COPY_SCRIPT'}
+          {copied ? 'SCRIPT COPIED' : 'COPY SCRIPT'}
         </button>
       </div>
     </div>

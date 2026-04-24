@@ -12,9 +12,9 @@
   "app": {
     "windows": [
       {
-        "title": "majestic-byte",
-        "width": 800,
-        "height": 600
+        "title": "Majestic Bytes By Mk",
+        "width": 1200,
+        "height": 750
       }
     ],
     "security": {

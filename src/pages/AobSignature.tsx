@@ -30,12 +30,12 @@ const AobSignature: React.FC = () => {
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+    <div style={{ maxWidth: '800px', margin: '0 auto' }}>
       <div className="card">
         <div style={{ borderBottom: '1px solid var(--outline-color)', paddingBottom: '8px', marginBottom: '16px' }}>
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span className="material-symbols-outlined">data_object</span>
-            AOB_SIGNATURE_GENERATOR
+            AOB SIGNATURE GENERATOR
           </h2>
         </div>
 
@@ -63,11 +63,11 @@ const AobSignature: React.FC = () => {
 
         <button className="btn-primary" style={{ margin: '16px 0' }} onClick={generateSignature}>
           <span className="material-symbols-outlined">auto_fix_high</span>
-          GENERATE_SIGNATURE
+          GENERATE SIGNATURE
         </button>
 
         <div className="input-group">
-          <label className="label-caps">RESULT_SIGNATURE</label>
+          <label className="label-caps">RESULT SIGNATURE</label>
           <textarea 
             className="input-field" 
             style={{ height: '100px', resize: 'none', backgroundColor: '#161616', opacity: 0.8 }}
@@ -92,12 +92,12 @@ const AobSignature: React.FC = () => {
           }}>
             {copied ? 'check' : 'content_copy'}
           </span>
-          {copied ? 'COPIED_SUCCESSFULLY' : 'COPY_TO_CLIPBOARD'}
+          {copied ? 'COPIED SUCCESSFULLY' : 'COPY TO CLIPBOARD'}
         </button>
       </div>
 
       <div className="card" style={{ padding: '12px' }}>
-        <h3 className="label-caps" style={{ marginBottom: '8px' }}>HOW_IT_WORKS</h3>
+        <h3 className="label-caps" style={{ marginBottom: '8px' }}>HOW IT WORKS</h3>
         <p style={{ fontSize: '11px', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
           Compare two arrays of bytes. If the bytes at the same position match, the byte is kept. If they differ, it is replaced by a wildcard (??).
         </p>
