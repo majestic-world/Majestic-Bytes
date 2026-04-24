@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HexConverter: React.FC = () => {
   const [inputVal, setInputVal] = useState('');
   const [outputVal, setOutputVal] = useState('');
   const [isHexToDec, setIsHexToDec] = useState(true);
+  const [copiedInput, setCopiedInput] = useState(false);
+  const [copiedOutput, setCopiedOutput] = useState(false);
 
   const handleConvert = () => {
     if (!inputVal) return;
@@ -22,8 +24,16 @@ const HexConverter: React.FC = () => {
     }
   };
 
-  const copyToClipboard = (text: string) => {
+  const copyToClipboard = (text: string, type: 'input' | 'output') => {
+    if (!text) return;
     navigator.clipboard.writeText(text);
+    if (type === 'input') {
+      setCopiedInput(true);
+      setTimeout(() => setCopiedInput(false), 2000);
+    } else {
+      setCopiedOutput(true);
+      setTimeout(() => setCopiedOutput(false), 2000);
+    }
   };
 
   const toggleMode = () => {
@@ -62,10 +72,10 @@ const HexConverter: React.FC = () => {
             />
             <button 
               className="btn-primary" 
-              style={{ width: 'auto', padding: '0 16px' }}
-              onClick={() => copyToClipboard(inputVal)}
+              style={{ width: 'auto', padding: '0 16px', color: copiedInput ? '#4ade80' : 'var(--text-primary)' }}
+              onClick={() => copyToClipboard(inputVal, 'input')}
             >
-              <span className="material-symbols-outlined">content_copy</span>
+              <span className="material-symbols-outlined">{copiedInput ? 'check' : 'content_copy'}</span>
             </button>
           </div>
         </div>
@@ -88,10 +98,10 @@ const HexConverter: React.FC = () => {
             />
             <button 
               className="btn-primary" 
-              style={{ width: 'auto', padding: '0 16px' }}
-              onClick={() => copyToClipboard(outputVal)}
+              style={{ width: 'auto', padding: '0 16px', color: copiedOutput ? '#4ade80' : 'var(--text-primary)' }}
+              onClick={() => copyToClipboard(outputVal, 'output')}
             >
-              <span className="material-symbols-outlined">content_copy</span>
+              <span className="material-symbols-outlined">{copiedOutput ? 'check' : 'content_copy'}</span>
             </button>
           </div>
         </div>

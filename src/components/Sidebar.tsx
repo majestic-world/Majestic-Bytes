@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Sidebar: React.FC = () => {
+interface SidebarProps {
+  currentPage: string;
+  onNavigate: (page: string) => void;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => {
   return (
     <aside className="sidebar">
       <div style={{ padding: '32px 24px' }}>
@@ -21,13 +26,21 @@ const Sidebar: React.FC = () => {
       </div>
       
       <nav style={{ flex: 1 }}>
-        <a href="#" className="nav-item active">
+        <a 
+          href="#" 
+          className={`nav-item ${currentPage === 'converter' ? 'active' : ''}`}
+          onClick={(e) => { e.preventDefault(); onNavigate('converter'); }}
+        >
           <span className="material-symbols-outlined">analytics</span>
           CONVERTER
         </a>
-        <a href="#" className="nav-item">
-          <span className="material-symbols-outlined">memory</span>
-          PROCESSOR
+        <a 
+          href="#" 
+          className={`nav-item ${currentPage === 'aob' ? 'active' : ''}`}
+          onClick={(e) => { e.preventDefault(); onNavigate('aob'); }}
+        >
+          <span className="material-symbols-outlined">data_object</span>
+          AOB_SIGNATURE
         </a>
         <a href="#" className="nav-item">
           <span className="material-symbols-outlined">account_tree</span>

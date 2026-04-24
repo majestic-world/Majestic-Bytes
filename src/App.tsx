@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
 import HexConverter from './pages/HexConverter';
+import AobSignature from './pages/AobSignature';
 
 function App() {
+  const [currentPage, setCurrentPage] = useState('converter');
+
   return (
     <div className="app-container">
-      <Sidebar />
+      <Sidebar currentPage={currentPage} onNavigate={setCurrentPage} />
       <main className="main-content">
         <Header />
         <div className="content-area">
-          <HexConverter />
+          {currentPage === 'converter' && <HexConverter />}
+          {currentPage === 'aob' && <AobSignature />}
         </div>
         <footer style={{ 
           height: '24px', 
