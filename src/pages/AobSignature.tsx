@@ -5,6 +5,7 @@ const AobSignature: React.FC = () => {
   const [aob2, setAob2] = useState('');
   const [result, setResult] = useState('');
   const [copied, setCopied] = useState(false);
+  const [formatCode, setFormatCode] = useState(false);
 
   const generateSignature = () => {
     const bytes1 = aob1.trim().split(/\s+/);
@@ -15,11 +16,14 @@ const AobSignature: React.FC = () => {
       return;
     }
 
+    const wildcard = formatCode ? 'xx' : '??';
+    const joiner = formatCode ? '' : ' ';
+
     const signature = bytes1.map((byte, index) => {
-      return byte.toUpperCase() === bytes2[index].toUpperCase() ? byte.toUpperCase() : '??';
+      return byte.toUpperCase() === bytes2[index].toUpperCase() ? byte.toUpperCase() : wildcard;
     });
 
-    setResult(signature.join(' '));
+    setResult(signature.join(joiner));
   };
 
   const copyToClipboard = () => {
@@ -59,6 +63,19 @@ const AobSignature: React.FC = () => {
             onChange={(e) => setAob2(e.target.value)}
             placeholder="e.g., 28 DF 80 44 01 00 00 00 00"
           />
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: '8px 0' }}>
+          <input 
+            type="checkbox" 
+            id="formatCode"
+            checked={formatCode}
+            onChange={(e) => setFormatCode(e.target.checked)}
+            style={{ cursor: 'pointer' }}
+          />
+          <label htmlFor="formatCode" style={{ fontSize: '12px', cursor: 'pointer', color: 'var(--text-secondary)' }}>
+            Format code? (xx and no spaces)
+          </label>
         </div>
 
         <button className="btn-primary" style={{ margin: '16px 0' }} onClick={generateSignature}>
