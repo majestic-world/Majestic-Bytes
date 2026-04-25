@@ -31,10 +31,10 @@ const PointerFormat: React.FC = () => {
       const reversedOffsets = offsets.reverse();
 
       // Build nested string: [[[[Base]+Offset1]+Offset2]...]
-      let formatted = `[${address}]`;
+      let formatted = address;
       
       for (const offset of reversedOffsets) {
-        formatted = `[${formatted}+${offset}]`;
+        formatted = `[${formatted}]+${offset}`;
       }
 
       setResult(formatted);
