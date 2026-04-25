@@ -5,6 +5,8 @@ import Header from './components/Header';
 import HexConverter from './pages/HexConverter';
 import AobSignature from './pages/AobSignature';
 import LuaScriptGenerator from './pages/LuaScriptGenerator';
+import PointerFormat from './pages/PointerFormat';
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState('converter');
@@ -18,6 +20,7 @@ function App() {
           {currentPage === 'converter' && <HexConverter />}
           {currentPage === 'aob' && <AobSignature />}
           {currentPage === 'lua' && <LuaScriptGenerator />}
+          {currentPage === 'pointer' && <PointerFormat />}
         </div>
       </main>
     </div>

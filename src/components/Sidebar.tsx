@@ -50,6 +50,14 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => {
           <span className="material-symbols-outlined">script</span>
           LUA AOB SCRIPT
         </a>
+        <a 
+          href="#" 
+          className={`nav-item ${currentPage === 'pointer' ? 'active' : ''}`}
+          onClick={(e) => { e.preventDefault(); onNavigate('pointer'); }}
+        >
+          <span className="material-symbols-outlined">format_list_numbered</span>
+          POINTER FORMAT
+        </a>
       </nav>
     </aside>
   );
