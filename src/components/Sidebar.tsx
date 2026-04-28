@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => {
           onClick={(e) => { e.preventDefault(); onNavigate('aob'); }}
         >
           <span className="material-symbols-outlined">data_object</span>
-          AOB SIGNATURE
+          ARRAY OF BYTES FIX
         </a>
         <a 
           href="#" 

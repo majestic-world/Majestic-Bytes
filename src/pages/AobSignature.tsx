@@ -39,7 +39,7 @@ const AobSignature: React.FC = () => {
         <div style={{ borderBottom: '1px solid var(--outline-color)', paddingBottom: '8px', marginBottom: '16px' }}>
           <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
             <span className="material-symbols-outlined">data_object</span>
-            AOB SIGNATURE GENERATOR
+            AOB FIX GENERATOR
           </h2>
         </div>
 
@@ -80,11 +80,11 @@ const AobSignature: React.FC = () => {
 
         <button className="btn-primary" style={{ margin: '16px 0' }} onClick={generateSignature}>
           <span className="material-symbols-outlined">auto_fix_high</span>
-          GENERATE SIGNATURE
+          GENERATE FIX
         </button>
 
         <div className="input-group">
-          <label className="label-caps">RESULT SIGNATURE</label>
+          <label className="label-caps">RESULT FIX</label>
           <textarea 
             className="input-field" 
             style={{ height: '100px', resize: 'none', backgroundColor: '#161616', opacity: 0.8 }}
