@@ -6,6 +6,7 @@ import HexConverter from './pages/HexConverter';
 import AobSignature from './pages/AobSignature';
 import LuaScriptGenerator from './pages/LuaScriptGenerator';
 import PointerFormat from './pages/PointerFormat';
+import MassHexConverter from './pages/MassHexConverter';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Header />
         <div className="content-area">
           {currentPage === 'converter' && <HexConverter />}
+          {currentPage === 'mass_converter' && <MassHexConverter />}
           {currentPage === 'aob' && <AobSignature />}
           {currentPage === 'lua' && <LuaScriptGenerator />}
           {currentPage === 'pointer' && <PointerFormat />}

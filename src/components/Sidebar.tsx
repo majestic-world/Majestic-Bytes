@@ -36,6 +36,14 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => {
         </a>
         <a 
           href="#" 
+          className={`nav-item ${currentPage === 'mass_converter' ? 'active' : ''}`}
+          onClick={(e) => { e.preventDefault(); onNavigate('mass_converter'); }}
+        >
+          <span className="material-symbols-outlined">dataset</span>
+          MASS CONVERTER
+        </a>
+        <a 
+          href="#" 
           className={`nav-item ${currentPage === 'aob' ? 'active' : ''}`}
           onClick={(e) => { e.preventDefault(); onNavigate('aob'); }}
         >
@@ -50,6 +58,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentPage, onNavigate }) => {
           <span className="material-symbols-outlined">script</span>
           LUA AOB SCRIPT
         </a>
+
         <a 
           href="#" 
           className={`nav-item ${currentPage === 'pointer' ? 'active' : ''}`}
